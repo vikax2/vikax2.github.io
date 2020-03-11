@@ -11,6 +11,7 @@ var app = new Vue({
     self.scanner = new Instascan.Scanner({ video: document.getElementById('preview'), scanPeriod: 5 });
     self.scanner.addListener('scan', function (content, image) {
 	let ff =  content.split("&");
+alert("content:"+ ff.join("&\n<br>"));
 
       self.scans.unshift({ date: +(Date.now()), content: ff.join("&\n<br>") });
     });
