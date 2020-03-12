@@ -92,22 +92,30 @@ if (window.AmbientLightSensor) {
 
 var scene = new THREE.Scene();
 
+alert("111");
 let torusGeometry = new THREE.TorusGeometry(7, 1.6, 4, 3, 6.3);
 let material = new THREE.MeshBasicMaterial({ color: 0x0071C5 });
 let torus = new THREE.Mesh(torusGeometry, material);
 scene.add(torus);
+alert("222");
 
 // Update mesh rotation using quaternion.
 const sensorAbs = new AbsoluteOrientationSensor();
 sensorAbs.onreading = () => torus.quaternion.fromArray(sensorAbs.quaternion);
 sensorAbs.start();
+alert("333 sensorAbs="+sensorAbs);
 
 // Update mesh rotation using rotation matrix.
 const sensorRel = new RelativeOrientationSensor();
 let rotationMatrix = new Float32Array(16);
+alert("444 sensorRel="+sensorRel);
+
 sensor_rel.onreading = () => {
+     alert("777 rotationMatrix"+rotationMatrix);
     sensorRel.populateMatrix(rotationMatrix);
     torus.matrix.fromArray(rotationMatrix);
+     alert("888 rotationMatrix"+rotationMatrix);
 }
 sensorRel.start();
 
+alert("666");
