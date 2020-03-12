@@ -110,12 +110,20 @@ const sensorRel = new RelativeOrientationSensor();
 let rotationMatrix = new Float32Array(16);
 alert("444 sensorRel="+sensorRel);
 
-sensor_rel.onreading = () => {
+try {
+sensorRel.onreading = () => {
      alert("777 rotationMatrix"+rotationMatrix);
     sensorRel.populateMatrix(rotationMatrix);
     torus.matrix.fromArray(rotationMatrix);
      alert("888 rotationMatrix"+rotationMatrix);
 }
+
+alert("555");
+
 sensorRel.start();
 
 alert("666");
+
+} catch (e) {
+ 	alert("999 error e.code="+e.code);
+}
