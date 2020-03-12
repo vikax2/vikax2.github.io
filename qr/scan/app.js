@@ -39,6 +39,7 @@ alert("content:"+ ff.join("&\n<br>"));
 });
 
 
+alert(" window.addEventListener('devicelight'");
 window.addEventListener('devicelight', function(event) {
   var html = document.getElementsByTagName('html')[0];
 
