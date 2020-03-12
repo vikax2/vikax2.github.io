@@ -63,7 +63,17 @@ window.ondevicelight = (event) => {
 
 if (typeof Gyroscope === "function") {
     // run in circles...
-   alert('Gyroscope='+Gyroscope );
+//   alert('Gyroscope='+Gyroscope );
+
+
+let gyroscope = new Gyroscope({frequency: 60});
+
+gyroscope.addEventListener('reading', e => {
+  alert("Angular velocity = " + gyroscope.x+","+gyroscope.y+","+gyroscope.z);
+});
+
+gyroscope.start();
+
 }
 
 if ("ProximitySensor" in window) {
