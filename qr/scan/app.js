@@ -39,8 +39,10 @@ alert("content:"+ ff.join("&\n<br>"));
 });
 
 
-alert(" window.addEventListener('devicelight'");
-window.addEventListener('devicelight', function(event) {
+//alert(" window.addEventListener('devicelight'");
+//window.addEventListener('devicelight', function(event) {
+
+window.ondevicelight = (event) => {
   var html = document.getElementsByTagName('html')[0];
 
   if (event.value < 50) {
@@ -52,4 +54,24 @@ window.addEventListener('devicelight', function(event) {
     html.classList.add('brightlight');
     html.classList.remove('darklight');
   }
-});
+};
+
+
+
+alert("window.ondevicelight="+window.ondevicelight);
+
+
+if (typeof Gyroscope === "function") {
+    // run in circles...
+   alert('typeof Gyroscope === "function"');
+}
+
+if ("ProximitySensor" in window) {
+    // watch out!
+   alert("ProximitySensor in  window");
+}
+
+if (window.AmbientLightSensor) {
+   alert("window.AmbientLightSensor");
+}
+
