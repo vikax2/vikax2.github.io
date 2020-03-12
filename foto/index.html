@@ -52,9 +52,10 @@
 
     // запрашиваем разрешение на доступ к поточному видео камеры
     navigator.getUserMedia({video: true}, function (stream) {
+	alert("111 stream="+stream);
       // разрешение от пользователя получено
       // скрываем подсказку
-      allow.style.display = "none";
+      allow.style.display = "block";
       // получаем url поточного видео
       videoStreamUrl = window.URL.createObjectURL(stream);
       // устанавливаем как источник для video 
