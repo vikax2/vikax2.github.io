@@ -37,3 +37,18 @@ alert("content:"+ ff.join("&\n<br>"));
     }
   }
 });
+
+
+window.addEventListener('devicelight', function(event) {
+  var html = document.getElementsByTagName('html')[0];
+
+  if (event.value < 50) {
+	alert(" devicelight() event.value < 50");
+    html.classList.add('darklight');
+    html.classList.remove('brightlight');
+  } else {
+	alert(" devicelight() event.value >= 50");
+    html.classList.add('brightlight');
+    html.classList.remove('darklight');
+  }
+});
