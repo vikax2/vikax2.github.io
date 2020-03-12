@@ -58,12 +58,12 @@ window.ondevicelight = (event) => {
 
 
 
-alert("window.ondevicelight="+window.ondevicelight);
+//alert("window.ondevicelight="+window.ondevicelight);
 
 
 if (typeof Gyroscope === "function") {
     // run in circles...
-   alert('typeof Gyroscope === "function"');
+   alert('Gyroscope='+Gyroscope );
 }
 
 if ("ProximitySensor" in window) {
