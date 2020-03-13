@@ -1,0 +1,56 @@
+<html>      
+  
+<head>                                                                                                    
+<!--Copyright (c) 2013 Valentin Kucherbaev (ViKaX).All rights reserved .-->
+<meta id="meta00" http-equiv='Content-Type' content='text/html;' charset='utf-8'>
+    <script type="text/javascript" src="./jquery.min.js"></script>
+
+
+<style>
+
+body {
+  background: #000000;
+}
+
+.flash{ 
+    position:fixed; 
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-color:#fff;
+ }
+</style>
+</head>
+
+<body>
+
+<video autoplay></video> 
+
+<script> 
+	const constraints = { video: true }; 
+	const video = document.querySelector('video'); 
+</script> 
+
+
+<script> 
+function hasGetUserMedia() { 
+	return !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia); 
+} 
+
+if (hasGetUserMedia()) { 
+	// Good to go! 
+	//alert('getUserMedia() is  supported by your browser'); 
+	navigator.mediaDevices.getUserMedia(constraints).then((stream) => {video.srcObject = stream}); 
+} else { 
+	alert('getUserMedia() is not supported by your browser'); 
+} 
+
+</script>
+
+
+</body>
+</html>
+
+
+
