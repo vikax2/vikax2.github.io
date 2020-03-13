@@ -90,6 +90,7 @@ if (window.AmbientLightSensor) {
 
 */
 
+
 var scene = new THREE.Scene();
 
 alert("111");
@@ -112,10 +113,10 @@ alert("444 sensorRel="+sensorRel);
 
 try {
 sensorRel.onreading = () => {
-     alert("777 rotationMatrix"+rotationMatrix);
+     //alert("777 rotationMatrix"+rotationMatrix);
     sensorRel.populateMatrix(rotationMatrix);
     torus.matrix.fromArray(rotationMatrix);
-     alert("888 rotationMatrix"+rotationMatrix);
+     //alert("888 rotationMatrix"+rotationMatrix);
 }
 
 alert("555");
@@ -126,4 +127,4 @@ alert("666");
 
 } catch (e) {
  	alert("999 error e.code="+e.code);
-}
+}+
