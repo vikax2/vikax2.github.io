@@ -41,7 +41,44 @@ function hasGetUserMedia() {
 if (hasGetUserMedia()) { 
 	// Good to go! 
 	//alert('getUserMedia() is  supported by your browser'); 
-	navigator.mediaDevices.getUserMedia(constraints).then((stream) => {video.srcObject = stream}); 
+
+ 	navigator.mediaDevices.enumerateDevices().then(devices => {
+  
+    		const cameras = devices.filter((device) => device.kind === 'videoinput');
+
+    		if (cameras.length === 0) {
+      			alert( 'No camera found on this device.');
+    		}
+    		const camera = cameras[cameras.length - 1];
+
+
+ // Create stream and get video track
+    navigator.mediaDevices.getUserMedia({
+      video: {
+        deviceId: camera.deviceId,
+        facingMode: ['user', 'environment'],
+        height: {ideal: 480},
+        width: {ideal: 640}
+      }
+    }).then(stream => {
+//      const track = stream.getVideoTracks()[0];
+
+      //Create image capture object and get camera capabilities
+//      const imageCapture = new ImageCapture(track)
+//      const photoCapabilities = imageCapture.getPhotoCapabilities().then(() => {
+
+		video.srcObject = stream;
+	//	alert("111");        
+
+	});
+
+
+	//	alert("222");
+	});
+
+	//navigator.mediaDevices.getUserMedia(constraints).then((stream) => {
+		//video.srcObject = stream;
+	//	}); 
 } else { 
 	alert('getUserMedia() is not supported by your browser'); 
 } 
