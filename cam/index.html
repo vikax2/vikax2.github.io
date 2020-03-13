@@ -67,6 +67,19 @@ if (hasGetUserMedia()) {
 //      const imageCapture = new ImageCapture(track)
 //      const photoCapabilities = imageCapture.getPhotoCapabilities().then(() => {
 
+
+	const track = stream.getVideoTracks()[0];
+
+      //Create image capture object and get camera capabilities
+      const imageCapture = new ImageCapture(track)
+      const photoCapabilities = imageCapture.getPhotoCapabilities().then(() => {
+
+		alert("000");
+
+	});
+
+
+
 		video.srcObject = stream;
 	//	alert("111");        
 
@@ -84,6 +97,9 @@ if (hasGetUserMedia()) {
 } 
 
 </script>
+
+<button class="switch">On / Off</button>
+
 
 
 </body>
