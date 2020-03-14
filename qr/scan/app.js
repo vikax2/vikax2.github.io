@@ -91,6 +91,7 @@ if (window.AmbientLightSensor) {
 */
 
 
+/*
 var scene = new THREE.Scene();
 
 alert("111");
@@ -127,4 +128,5 @@ alert("666");
 
 } catch (e) {
  	alert("999 error e.code="+e.code);
-}+
+}
+*/
