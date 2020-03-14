@@ -1,5 +1,6 @@
 <html>
   <head>
+<meta  charset="utf-8">
     <title>Instascan &ndash; Demo</title>
     <link rel="stylesheet" href="style.css">
     <script type="text/javascript" src="adapter.js"></script>
@@ -32,6 +33,7 @@
             <li v-for="scan in scans" :key="scan.date" :title="scan.content">{{ scan.content }}</li>
           </transition-group>
         </section>
+	 <div id="info_qr_scan" >111111111111111 </div>
       </div>
       <div class="preview-container">
         <video id="preview"></video>
