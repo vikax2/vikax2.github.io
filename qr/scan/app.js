@@ -84,8 +84,12 @@ function DoTo4(str) {
 
 //document.getElementById("info_qr_scan").innerHTML = content;
 
+//  alert("111 "+content);
+
         content =   utf8_to_str(content);
-	document.getElementById("info_qr_scan").innerHTML = content;
+//  alert("222 "+content);
+
+//	document.getElementById("info_qr_scan").innerHTML = content;
 //        content =   convertToHex(content);
 
 //alert(content);
@@ -98,12 +102,12 @@ function DoTo4(str) {
 	let ff2 =  content.split("|");
 	if (ff1.length >1 ) {
 		alert("content:"+ ff1.join("&\n<br>"));
-      		self.scans.unshift({ date: +(Date.now()), content: ff1.join("&\n<br>") });
+//      		self.scans.unshift({ date: +(Date.now()), content: ff1.join("&\n<br>") });
 	}
 
 	if (ff2.length >1 ) {
 		alert("content:"+ ff2.join("|\n<br>"));
-      		self.scans.unshift({ date: +(Date.now()), content: ff2.join("|\n<br>") });
+//      		self.scans.unshift({ date: +(Date.now()), content: ff2.join("|\n<br>") });
 	}
 
     });
