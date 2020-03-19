@@ -170,11 +170,11 @@ function DoTo4(str) {
 //        contentHex =   convertToHex(content);
 //  alert("000 "+contentHex);
 
-  alert("111 "+content);
+//  alert("111 "+content);
 
 	
         content =   decode(content);
-  alert("222 "+content);
+//  alert("222 "+content);
 
 //	document.getElementById("info_qr_scan").innerHTML = content;
 //        contentHex =   convertToHex(content);
@@ -187,17 +187,28 @@ function DoTo4(str) {
 
 	let ff1 =  content.split("&");
 	let ff2 =  content.split("|");
+	let ff3 =  content.split("\n");
 
 
 
 	if (ff1.length >1 ) {
-		alert("content:"+ ff1.join("&\n<br>"));
+		alert("content ff1:"+ ff1.join("&\n<br>"));
 //      		self.scans.unshift({ date: +(Date.now()), content: ff1.join("&\n<br>") });
 	}
 
 	if (ff2.length >1 ) {
-		alert("content:"+ ff2.join("|\n<br>"));
+		alert("content ff2:"+ ff2.join("|\n<br>"));
 //      		self.scans.unshift({ date: +(Date.now()), content: ff2.join("|\n<br>") });
+	}
+
+	if (ff3.length >1 ) {
+		alert("content ff3:"+ ff3.join("\n<br>"));
+//      		self.scans.unshift({ date: +(Date.now()), content: ff2.join("|\n<br>") });
+	}
+
+	if (ff1.length*ff2.length*ff3.length == 1) {
+		alert("content ff0:"+ content);
+
 	}
 
     });
