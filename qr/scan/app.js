@@ -170,11 +170,11 @@ function DoTo4(str) {
 //        contentHex =   convertToHex(content);
 //  alert("000 "+contentHex);
 
-//  alert("111 "+content);
+  alert("111 "+content);
 
 	
         content =   decode(content);
-//  alert("222 "+content);
+  alert("222 "+content);
 
 //	document.getElementById("info_qr_scan").innerHTML = content;
 //        contentHex =   convertToHex(content);
