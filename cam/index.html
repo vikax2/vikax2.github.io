@@ -32,13 +32,19 @@
 	</head>
 	<body>
 
-		<div id="info">
-			<a href="https://threejs.org" target="_blank" rel="noopener">three.js</a> - webgl video webcam input
-		</div>
 
 		<script src="./three.js"></script>
 		<script src="./OrbitControls.js"></script>
 		<script src="./WebGL.js"></script>
+		<script src="./dat.gui.min.js"></script>
+		<script src="./CopyShader.js"></script>
+		<script src="./LuminosityShader.js"></script>
+		<script src="./SobelOperatorShader.js"></script>
+
+		<script src="./EffectComposer.js"></script>
+		<script src="./RenderPass.js"></script>
+		<script src="./ShaderPass.js"></script>
+
 
 		<video id="video" autoplay style="display:none"></video>
 
@@ -51,6 +57,12 @@
 			}
 
 			var camera, scene, renderer, video;
+			var effectSobel;
+
+			var params = {
+				enable: true
+			};
+
 
 			init();
 			animate();
@@ -89,14 +101,55 @@
 
 				}
 
-				renderer = new THREE.WebGLRenderer( { antialias: true } );
+
+				var ambientLight = new THREE.AmbientLight( 0xcccccc, 0.4 );
+				scene.add( ambientLight );
+
+				var pointLight = new THREE.PointLight( 0xffffff, 0.8 );
+				camera.add( pointLight );
+				scene.add( camera );
+
+
+
+
+
+				renderer = new THREE.WebGLRenderer({antialias: true});
 				renderer.setPixelRatio( window.devicePixelRatio );
 				renderer.setSize( window.innerWidth, window.innerHeight );
 				document.body.appendChild( renderer.domElement );
 
+				// postprocessing
+
+				composer = new THREE.EffectComposer( renderer );
+				var renderPass = new THREE.RenderPass( scene, camera );
+				composer.addPass( renderPass );
+
+				// color to grayscale conversion
+
+				var effectGrayScale = new THREE.ShaderPass( THREE.LuminosityShader );
+				composer.addPass( effectGrayScale );
+
+				// you might want to use a gaussian blur filter before
+				// the next pass to improve the result of the Sobel operator
+
+				// Sobel operator
+
+				effectSobel = new THREE.ShaderPass( THREE.SobelOperatorShader );
+				effectSobel.uniforms[ "resolution" ].value.x = window.innerWidth;
+				effectSobel.uniforms[ "resolution" ].value.y = window.innerHeight;
+				composer.addPass( effectSobel );
+
+
+
 				var controls = new THREE.OrbitControls( camera, renderer.domElement );
 				controls.enableZoom = false;
 				controls.enablePan = false;
+
+				var gui = new dat.GUI();
+
+				gui.add( params, 'enable' );
+				gui.open();
+
 
 				window.addEventListener( 'resize', onWindowResize, false );
 
@@ -129,17 +182,33 @@
 
 			function onWindowResize() {
 
-				 camera.aspect = window.innerWidth / window.innerHeight;
-				 camera.updateProjectionMatrix();
+				camera.aspect = window.innerWidth / window.innerHeight;
+				camera.updateProjectionMatrix();
 
-				 renderer.setSize( window.innerWidth, window.innerHeight );
+				renderer.setSize( window.innerWidth, window.innerHeight );
+				composer.setSize( window.innerWidth, window.innerHeight );
+
+				effectSobel.uniforms[ "resolution" ].value.x = window.innerWidth;
+				effectSobel.uniforms[ "resolution" ].value.y = window.innerHeight;
+
+
 
 			}
 
 			function animate() {
 
 				 requestAnimationFrame( animate );
-				 renderer.render( scene, camera );
+
+				if ( params.enable === true ) {
+
+					composer.render();
+
+				} else {
+
+					renderer.render( scene, camera );
+
+				}
+
 
 			}
 
