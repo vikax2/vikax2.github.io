@@ -45,8 +45,8 @@ THREE.SobelOperatorShader = {
 //			"const mat3 Gx = mat3( -1, -2, -1, 0, 0, 0, 1, 2, 1 );", // x direction kernel
 //			"const mat3 Gy = mat3( -1, 0, 1, -2, 0, 2, -1, 0, 1 );", // y direction kernel
 
-			"const mat3 Gx = mat3( -1, -1, -1, 0, 0, 0, 1, 1, 1 );", // x direction kernel
-			"const mat3 Gy = mat3( -1, 0, 1, -1, 0, 1, -1, 0, 1 );", // y direction kernel
+			"const mat3 Gx = mat3( -1, -2, -1, 0, 0, 0, 1, 2, 1 );", // x direction kernel
+			"const mat3 Gy = mat3( -1, 0, 1, -2, 0, 2, -1, 0, 1 );", // y direction kernel
 
 
 
@@ -87,8 +87,10 @@ THREE.SobelOperatorShader = {
 			
 
 			"float G = sqrt( ( valueGx * valueGx ) + ( valueGy * valueGy ) );",
+			" G = G * 10.;",
 
-			"gl_FragColor = vec4( vec3( G ), 0.5 );",
+			" G = G <0.25 ?  0.00 : G;",
+			"gl_FragColor = vec4( vec3( G ), 1.0 );",
 
 		"}"
 
