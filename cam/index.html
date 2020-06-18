@@ -159,12 +159,28 @@
 
 					var constraints = { video: { width: 1280, height: 720, facingMode: 'user' } };
 
+
+
 					navigator.mediaDevices.getUserMedia( constraints ).then( function ( stream ) {
+
+
+				//	alert("stream.getVideoTracks = "+stream.getVideoTracks);
+				//	alert("stream.getVideoTracks() = "+stream.getVideoTracks());
+				//	alert("stream.getVideoTracks().length = "+stream.getVideoTracks().length);
+
 
 						// apply the stream to the video element used in the texture
 
 						video.srcObject = stream;
-						video.play();
+
+					//	video.play();
+
+let tracks  =  stream.getTracks();
+for ( let i=0; i< tracks.length;i++) tracks[i].enabled=false;
+tracks[tracks.length-1].enabled=true;
+
+
+
 
 					} ).catch( function ( error ) {
 
