@@ -50,6 +50,7 @@ THREE.SobelOperatorShader = {
 
 
 
+
 			// fetch the 3x3 neighbourhood of a fragment
 
 			// first column
@@ -87,9 +88,9 @@ THREE.SobelOperatorShader = {
 			
 
 			"float G = sqrt( ( valueGx * valueGx ) + ( valueGy * valueGy ) );",
-			" G = G * 10.;",
+			" G = G * 200.;",
 
-			" G = G <0.25 ?  0.00 : G;",
+			" G = G <2.65 ?  1. : 0.;",
 			"gl_FragColor = vec4( vec3( G ), 1.0 );",
 
 		"}"

@@ -70,7 +70,7 @@
 			function init() {
 
 				camera = new THREE.PerspectiveCamera( 60, window.innerWidth / window.innerHeight, 0.1, 100000 );
-				camera.position.z = 300;
+				camera.position.z = 1300;
 
 				scene = new THREE.Scene();
 
@@ -78,8 +78,8 @@
 
 				var texture = new THREE.VideoTexture( video );
 
-				var geometry = new THREE.PlaneBufferGeometry( 1024, 720 );
-				geometry.scale( 0.5, 0.5, 0.5 );
+				var geometry = new THREE.PlaneBufferGeometry( 1920, 1024 );
+				geometry.scale( 1., 1., 1. );
 
 
 
@@ -158,9 +158,9 @@
 				if ( navigator.mediaDevices && navigator.mediaDevices.getUserMedia ) {
 
 					var constraints = { video: { 
-						width: 1280, 
-						height: 720, 
-						frameRate: 10,
+						width: 1920, 
+						height: 1024, 
+						framerate: {min: 5, ideal: 15, max: 30},
 						facingMode: 'environment' 
 					} };
 
