@@ -1,0 +1,12 @@
+//alert("hello from vikax2.github.io");
+function init() {
+
+	var divs_b_34874154 =  document.getElementsByClassName('b-34874154');
+
+	if (divs_b_34874154) {
+		alert("divs_b_34874154[0].innerHTML="+divs_b_34874154[0].innerHTML);
+	}
+
+}
+
+init();
