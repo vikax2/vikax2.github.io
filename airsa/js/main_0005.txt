@@ -7,8 +7,8 @@ function init() {
 		//alert("divs_b_34874154="+divs_b_34874154);
 		//alert("divs_b_34874154length="+divs_b_34874154.length);
 		//alert("divs_b_34874154[0].innerHTML="+divs_b_34874154[0].innerHTML);
-		divs_b_34874154[0].style.cursor="pointer";		
-		divs_b_34874154[0].onclick="search_avia_tickets();";		
+		divs_b_34874154[0].setAttribute("style","cursor:pointer");		
+		//divs_b_34874154[0].onclick="search_avia_tickets();";		
 
 	}
 
