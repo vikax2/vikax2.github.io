@@ -4,6 +4,7 @@ var divs_b_34874154 = null;
 var divs_b_34998271 = null;
 var divs_b_34998271_h2 = null;
 
+var btn_amoforms_action_btn = null;
 
 function init() {
 
@@ -33,6 +34,8 @@ function init() {
 	}
 
 
+	btn_amoforms_action_btn = document.getElementById('amoforms_action_btn');
+	btn_amoforms_action_btn.style.display="none";
 
 //alert(" AMOPIXEL_IDENTIFIER="+AMOPIXEL_IDENTIFIER);
 //alert(" AMOPIXEL_IDENTIFIER.getVisitorUid()="+AMOPIXEL_IDENTIFIER.getVisitorUid());
@@ -96,7 +99,9 @@ function search_avia_tickets() {
 	var div_cur_client_uid = document.getElementById('div_visitor_uid');
 	
 	var  cur_client_uid = div_cur_client_uid ? div_cur_client_uid.value  : "";
-	alert("search_avia_tickets() visitor_uid="+cur_client_uid);
+	//alert("search_avia_tickets() visitor_uid="+cur_client_uid);
+	if (btn_amoforms_action_btn)
+		btn_amoforms_action_btn.style.display="block";
 }
 
 function func_cur_flight(e) {
