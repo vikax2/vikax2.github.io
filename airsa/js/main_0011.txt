@@ -20,7 +20,7 @@ function init() {
 //	var script_000 = iframe.contentWindow.document.createElement('script');
 		 div_btn_form_action = iframe.contentWindow.document.createElement('div');
 		 div_btn_form.innerHTML = ss_btn_form_action;
-         	iframe_btn_form_action.contentWindow.document.getElementsByTagName("body")appendChild(div_btn_form_action);
+         	iframe_btn_form_action.contentWindow.document.getElementsByTagName("body").appendChild(div_btn_form_action);
          }
 	
 	
