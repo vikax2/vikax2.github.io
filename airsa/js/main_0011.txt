@@ -49,7 +49,7 @@ alert("iframe_btn_form_action.contentDocument="+iframe_btn_form_action.contentDo
 			}
 */
                         iframe_btn_form_action.src="https://forms.amocrm.ru/ztrxwc";
-			iframe_btn_form_action.width="468px"; 
+			iframe_btn_form_action.width="100%"; 
 			iframe_btn_form_action.height="300px";
 			iframe_btn_form_action.align="center";
 			iframe_btn_form_action.left="50%-234px";
