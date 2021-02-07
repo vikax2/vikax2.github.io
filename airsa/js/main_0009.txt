@@ -1,0 +1,51 @@
+//alert("hello from vikax2.github.io");
+var visitor_uid ="";
+
+function init() {
+
+	var divs_b_34874154 =  document.getElementsByClassName('b-34874154');
+
+	if (divs_b_34874154) {
+		//alert("divs_b_34874154="+divs_b_34874154);
+		//alert("divs_b_34874154length="+divs_b_34874154.length);
+		//alert("divs_b_34874154[0].innerHTML="+divs_b_34874154[0].innerHTML);
+		divs_b_34874154[0].setAttribute("style","cursor:pointer");		
+		divs_b_34874154[0].onclick= function () { 
+			search_avia_tickets();
+		};		
+
+	}
+
+
+	var divs_b_34998271 =  document.getElementsByClassName('b-34998271');
+
+	if (divs_b_34998271) {
+		divs_b_34998271[0].setAttribute("style","cursor:pointer");		
+		divs_b_34998271[0].onclick= function () { 
+			func_flights();
+		};		
+
+	}
+
+
+
+
+visitor_uid = AMOPIXEL_IDENTIFIER.getVisitorUid ( ) ;
+
+
+
+}
+
+function func_flights() {
+	alert("func_flights() visitor_uid="+visitor_uid);
+}
+
+
+function search_avia_tickets() {
+	alert("search_avia_tickets() visitor_uid="+visitor_uid);
+}
+
+
+document.addEventListener("DOMContentLoaded", function(event) {
+   init();
+});
