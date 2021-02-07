@@ -29,13 +29,13 @@ function init() {
 
 }
 
-function search_avia_tickets() {
+function func_flights() {
 	alert("func_flights() ");
 }
 
 
 function search_avia_tickets() {
-	alert("se() ");
+	alert("search_avia_tickets() ");
 }
 
 
