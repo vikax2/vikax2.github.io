@@ -65,28 +65,37 @@ function func_flights() {
 
 if (!exist_list_flights_2021_02)  {
 	 div_flights_2021_02 = document.createElement("div");
-	 ss_flights_2021_02 =`
-	<div id="div_07_02_UTA6804" >07.02 UTA6804	Душанбе-Москва </div>
-	<div id="div_07_02_UTA6804" >07.02 UTA6760	Худжанд-Сургут </div>
-	<div id="div_14_02_UTA6804" >14.02 UTA6804	Душанбе-Москва </div>
-	<div id="div_07_02_UTA6804" >17.02 UTA6804	Душанбе-Москва </div>
-	<div id="div_07_02_UTA6804" >17.02 UTA6760	Худжанд-Сургут </div>
-	<div id="div_07_02_UTA6804" >25.02 UTA6804	Душанбе-Москва </div>
-	<div id="div_07_02_UTA6804" >28.02 UTA6804	Душанбе-Москва </div>
-	<div id="div_07_02_UTA6804" >28.02 UTA6760 	Худжанд-Сургут </div>
+	 ss_flights_2021_02 =` Рейсы на февраль 2021 : <br><br>
+	<div id="div_07_02_UTA6804" onclick="func_cur_flight(this);">07.02 UTA6804	Душанбе-Москва </div>
+	<div id="div_07_02_UTA6804" onclick="func_cur_flight(this);">07.02 UTA6760	Худжанд-Сургут </div>
+	<div id="div_14_02_UTA6804" onclick="func_cur_flight(this);">14.02 UTA6804	Душанбе-Москва </div>
+	<div id="div_07_02_UTA6804" onclick="func_cur_flight(this);">17.02 UTA6804	Душанбе-Москва </div>
+	<div id="div_07_02_UTA6804" onclick="func_cur_flight(this);">17.02 UTA6760	Худжанд-Сургут </div>
+	<div id="div_07_02_UTA6804" onclick="func_cur_flight(this);">25.02 UTA6804	Душанбе-Москва </div>
+	<div id="div_07_02_UTA6804" onclick="func_cur_flight(this);">28.02 UTA6804	Душанбе-Москва </div>
+	<div id="div_07_02_UTA6804" onclick="func_cur_flight(this);">28.02 UTA6760 	Худжанд-Сургут </div>
 	`;
 
 
 
 	div_flights_2021_02.innerHTML = ss_flights_2021_02;
+	div_flights_2021_02.style="display:block;text-align: center; line-height: 1.75; font-size: 1.0rem; color: rgb(252, 252, 252)";
+
 	divs_b_34998271[0].appendChild(div_flights_2021_02);
         exist_list_flights_2021_02 = true;
+	}  else {
+		if (div_flights_2021_02.style.display=="block") div_flights_2021_02.style.display="none";
+		else div_flights_2021_02.style.display="block";	
 	}
 }
 
 
 function search_avia_tickets() {
 //	alert("search_avia_tickets() visitor_uid="+visitor_uid);
+}
+
+function func_cur_flight(e) {
+	alert("Рейс "+ e.innerHTML);
 }
 
 
