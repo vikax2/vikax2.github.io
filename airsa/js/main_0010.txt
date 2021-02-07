@@ -1,0 +1,96 @@
+//alert("hello from vikax2.github.io");
+var visitor_uid ="";
+var divs_b_34874154 = null;
+var divs_b_34998271 = null;
+
+
+function init() {
+
+	divs_b_34874154 =  document.getElementsByClassName('b-34874154');
+
+	if (divs_b_34874154) {
+		//alert("divs_b_34874154="+divs_b_34874154);
+		//alert("divs_b_34874154length="+divs_b_34874154.length);
+		//alert("divs_b_34874154[0].innerHTML="+divs_b_34874154[0].innerHTML);
+		divs_b_34874154[0].setAttribute("style","cursor:pointer");		
+		divs_b_34874154[0].onclick= function () { 
+			search_avia_tickets();
+		};		
+
+	}
+
+
+	 divs_b_34998271 =  document.getElementsByClassName('b-34998271');
+
+	if (divs_b_34998271) {
+		divs_b_34998271[0].setAttribute("style","cursor:pointer");		
+		divs_b_34998271[0].onclick= function () { 
+			func_flights();
+		};		
+
+	}
+
+
+
+//alert(" AMOPIXEL_IDENTIFIER="+AMOPIXEL_IDENTIFIER);
+//alert(" AMOPIXEL_IDENTIFIER.getVisitorUid()="+AMOPIXEL_IDENTIFIER.getVisitorUid());
+
+if (AMOPIXEL_IDENTIFIER)
+if (AMOPIXEL_IDENTIFIER.getVisitorUid)
+	visitor_uid = AMOPIXEL_IDENTIFIER.getVisitorUid();
+
+
+
+}
+
+var exist_list_flights_2021_01 = false;
+var exist_list_flights_2021_02 = false;
+var exist_list_flights_2021_03 = false;
+var exist_list_flights_2021_04 = false;
+var exist_list_flights_2021_05 = false;
+var exist_list_flights_2021_06 = false;
+var exist_list_flights_2021_07 = false;
+var exist_list_flights_2021_08 = false;
+var exist_list_flights_2021_09 = false;
+var exist_list_flights_2021_10 = false;
+var exist_list_flights_2021_11 = false;
+var exist_list_flights_2021_12 = false;
+
+
+var div_flights_2021_02 = null;
+var ss_flights_2021_02 =``;
+
+function func_flights() {
+//	alert("func_flights() visitor_uid="+visitor_uid);
+
+if (!exist_list_flights_2021_02)  {
+	 div_flights_2021_02 = document.createElement("div");
+	 ss_flights_2021_02 =`
+	<div id="div_07_02_UTA6804" >07.02 UTA6804	Душанбе-Москва </div>
+	<div id="div_07_02_UTA6804" >07.02 UTA6760	Худжанд-Сургут </div>
+	<div id="div_14_02_UTA6804" >14.02 UTA6804	Душанбе-Москва </div>
+	<div id="div_07_02_UTA6804" >17.02 UTA6804	Душанбе-Москва </div>
+	<div id="div_07_02_UTA6804" >17.02 UTA6760	Худжанд-Сургут </div>
+	<div id="div_07_02_UTA6804" >25.02 UTA6804	Душанбе-Москва </div>
+	<div id="div_07_02_UTA6804" >28.02 UTA6804	Душанбе-Москва </div>
+	<div id="div_07_02_UTA6804" >28.02 UTA6760 	Худжанд-Сургут </div>
+	`;
+
+
+
+	div_flights_2021_02.innerHTML = ss_flights_2021_02;
+	divs_b_34998271[0].appendChild(div_flights_2021_02);
+        exist_list_flights_2021_02 = true;
+	}
+}
+
+
+function search_avia_tickets() {
+//	alert("search_avia_tickets() visitor_uid="+visitor_uid);
+}
+
+
+
+document.addEventListener("DOMContentLoaded", function(event) {
+   init();
+});
