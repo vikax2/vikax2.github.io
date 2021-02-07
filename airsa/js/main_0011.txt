@@ -1,0 +1,118 @@
+//alert("hello from vikax2.github.io");
+var visitor_uid ="";
+var divs_b_34874154 = null;
+var divs_b_34998271 = null;
+var divs_b_34998271_h2 = null;
+
+
+function init() {
+
+	divs_b_34874154 =  document.getElementsByClassName('b-34874154');
+
+	if (divs_b_34874154) {
+		//alert("divs_b_34874154="+divs_b_34874154);
+		//alert("divs_b_34874154length="+divs_b_34874154.length);
+		//alert("divs_b_34874154[0].innerHTML="+divs_b_34874154[0].innerHTML);
+		divs_b_34874154[0].setAttribute("style","cursor:pointer");		
+		divs_b_34874154[0].onclick= function () { 
+			search_avia_tickets();
+		};		
+
+	}
+
+
+	 divs_b_34998271 =  document.getElementsByClassName('b-34998271');
+
+	if (divs_b_34998271) {
+		divs_b_34998271_h2 = divs_b_34998271[0].getElementsByTagName("h2");
+		divs_b_34998271_h2[0].style.cursor="pointer";		
+		divs_b_34998271_h2[0].onclick= function () { 
+			func_flights();
+		};		
+
+	}
+
+
+
+//alert(" AMOPIXEL_IDENTIFIER="+AMOPIXEL_IDENTIFIER);
+//alert(" AMOPIXEL_IDENTIFIER.getVisitorUid()="+AMOPIXEL_IDENTIFIER.getVisitorUid());
+
+//if (AMOPIXEL_IDENTIFIER)
+//if (AMOPIXEL_IDENTIFIER.getVisitorUid)
+//	visitor_uid = AMOPIXEL_IDENTIFIER.getVisitorUid();
+
+
+
+}
+
+var exist_list_flights_2021_01 = false;
+var exist_list_flights_2021_02 = false;
+var exist_list_flights_2021_03 = false;
+var exist_list_flights_2021_04 = false;
+var exist_list_flights_2021_05 = false;
+var exist_list_flights_2021_06 = false;
+var exist_list_flights_2021_07 = false;
+var exist_list_flights_2021_08 = false;
+var exist_list_flights_2021_09 = false;
+var exist_list_flights_2021_10 = false;
+var exist_list_flights_2021_11 = false;
+var exist_list_flights_2021_12 = false;
+
+
+var div_flights_2021_02 = null;
+var ss_flights_2021_02 =``;
+
+function func_flights() {
+//	alert("func_flights() visitor_uid="+visitor_uid);
+
+if (!exist_list_flights_2021_02)  {
+	 div_flights_2021_02 = document.createElement("div");
+	 ss_flights_2021_02 =` Рейсы на февраль 2021 : <br><br>
+	<div id="div_07_02_UTA6804" onclick="func_cur_flight(this);" style="cursor:pointer">07.02 UTA6804	Душанбе-Москва </div>
+	<div id="div_07_02_UTA6760" onclick="func_cur_flight(this);" style="cursor:pointer">07.02 UTA6760	Худжанд-Сургут </div>
+	<div id="div_14_02_UTA6804" onclick="func_cur_flight(this);" style="cursor:pointer">14.02 UTA6804	Душанбе-Москва </div>
+	<div id="div_17_02_UTA6804" onclick="func_cur_flight(this);" style="cursor:pointer">17.02 UTA6804	Душанбе-Москва </div>
+	<div id="div_17_02_UTA6760" onclick="func_cur_flight(this);" style="cursor:pointer">17.02 UTA6760	Худжанд-Сургут </div>
+	<div id="div_25_02_UTA6804" onclick="func_cur_flight(this);" style="cursor:pointer">25.02 UTA6804	Душанбе-Москва </div>
+	<div id="div_28_02_UTA6804" onclick="func_cur_flight(this);" style="cursor:pointer">28.02 UTA6804	Душанбе-Москва </div>
+	<div id="div_28_02_UTA6760" onclick="func_cur_flight(this);" style="cursor:pointer">28.02 UTA6760 	Худжанд-Сургут </div>
+	`;
+
+
+
+	div_flights_2021_02.innerHTML = ss_flights_2021_02;
+	div_flights_2021_02.style="display:block;text-align: center; line-height: 1.75; font-size: 1.0rem; color: rgb(252, 252, 252)";
+
+	divs_b_34998271[0].appendChild(div_flights_2021_02);
+        exist_list_flights_2021_02 = true;
+	}  else {
+		if (div_flights_2021_02.style.display=="block") div_flights_2021_02.style.display="none";
+		else div_flights_2021_02.style.display="block";	
+	}
+}
+
+
+function search_avia_tickets() {
+	alert("search_avia_tickets() visitor_uid="+visitor_uid);
+}
+
+function func_cur_flight(e) {
+	alert("Рейс "+ e.innerHTML);
+}
+
+
+
+document.addEventListener("DOMContentLoaded", function(event) {
+   init();
+});
+
+
+
+window.AMOPIXEL_IDENTIFIER_PARAMS = window.AMOPIXEL_IDENTIFIER_PARAMS || { } ;
+window.AMOPIXEL_IDENTIFIER_PARAMS.onload = function (pixel_identifier) {
+    var visitor_uid = pixel_identifier.getVisitorUid() ; // �������� visitor_uid
+   // console.log ( 'visitor_uid' , visitor_uid) ;
+    if (visitor_uid) {
+     // document.getElementById ( 'visitor_uid' ).value = visitor_uid;
+   }
+} ;
