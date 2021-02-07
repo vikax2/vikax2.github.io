@@ -29,24 +29,26 @@ function init() {
 
 
 
-alert(" AMOPIXEL_IDENTIFIER="+AMOPIXEL_IDENTIFIER);
-alert(" AMOPIXEL_IDENTIFIER.getVisitorUid()="+AMOPIXEL_IDENTIFIER.getVisitorUid());
+//alert(" AMOPIXEL_IDENTIFIER="+AMOPIXEL_IDENTIFIER);
+//alert(" AMOPIXEL_IDENTIFIER.getVisitorUid()="+AMOPIXEL_IDENTIFIER.getVisitorUid());
 
-
-visitor_uid = AMOPIXEL_IDENTIFIER.getVisitorUid();
+if (AMOPIXEL_IDENTIFIER)
+if (AMOPIXEL_IDENTIFIER.getVisitorUid)
+	visitor_uid = AMOPIXEL_IDENTIFIER.getVisitorUid();
 
 
 
 }
 
 function func_flights() {
-	alert("func_flights() visitor_uid="+visitor_uid);
+//	alert("func_flights() visitor_uid="+visitor_uid);
 }
 
 
 function search_avia_tickets() {
-	alert("search_avia_tickets() visitor_uid="+visitor_uid);
+//	alert("search_avia_tickets() visitor_uid="+visitor_uid);
 }
+
 
 
 document.addEventListener("DOMContentLoaded", function(event) {
