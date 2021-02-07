@@ -93,7 +93,10 @@ if (!exist_list_flights_2021_02)  {
 
 
 function search_avia_tickets() {
-	alert("search_avia_tickets() visitor_uid="+visitor_uid);
+	var div_cur_client_uid = document.getElementById('div_visitor_uid');
+	
+	var  cur_client_uid = div_cur_client_uid ? div_cur_client_uid.value  : "";
+	alert("search_avia_tickets() visitor_uid="+cur_client_uid);
 }
 
 function func_cur_flight(e) {
