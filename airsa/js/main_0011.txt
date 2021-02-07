@@ -15,12 +15,12 @@ function init() {
 	`;
 	 iframe_btn_form_action = document.createElement("iframe");
 	if (iframe_btn_form_action) {
-		 div_btn_form.innerHTML = ss_btn_form_action;
+		 //div_btn_form.innerHTML = ss_btn_form_action;
 
 //	var script_000 = iframe.contentWindow.document.createElement('script');
 		 div_btn_form_action = iframe.contentWindow.document.createElement('div');
 		 div_btn_form.innerHTML = ss_btn_form_action;
-         	iframe_btn_form_action.contentWindow.document.getElementsByTagName("body").appendChild(div_btn_form_action);
+         	iframe_btn_form_action.contentWindow.document.getElementsByTagName("body")[0].appendChild(div_btn_form_action);
          }
 	
 	
