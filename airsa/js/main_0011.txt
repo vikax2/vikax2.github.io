@@ -35,7 +35,9 @@ function init() {
 
 
 	btn_amoforms_action_btn = document.getElementById('amoforms_action_btn');
-	btn_amoforms_action_btn.style.display="none";
+	if (btn_amoforms_action_btn) 
+		btn_amoforms_action_btn.style.display="none";
+
 
 //alert(" AMOPIXEL_IDENTIFIER="+AMOPIXEL_IDENTIFIER);
 //alert(" AMOPIXEL_IDENTIFIER.getVisitorUid()="+AMOPIXEL_IDENTIFIER.getVisitorUid());
