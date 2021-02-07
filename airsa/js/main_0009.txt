@@ -40,8 +40,41 @@ if (AMOPIXEL_IDENTIFIER.getVisitorUid)
 
 }
 
+var exist_list_flights_2021_01 = false;
+var exist_list_flights_2021_02 = false;
+var exist_list_flights_2021_03 = false;
+var exist_list_flights_2021_04 = false;
+var exist_list_flights_2021_05 = false;
+var exist_list_flights_2021_06 = false;
+var exist_list_flights_2021_07 = false;
+var exist_list_flights_2021_08 = false;
+var exist_list_flights_2021_09 = false;
+var exist_list_flights_2021_10 = false;
+var exist_list_flights_2021_11 = false;
+var exist_list_flights_2021_12 = false;
+
+
+
 function func_flights() {
 //	alert("func_flights() visitor_uid="+visitor_uid);
+
+
+var div_flights_2021_02 = document.createElement("div");
+var  ss_flights_2021_02 ="
+<div id="div_07_02_UTA6804" >07.02 UTA6804	Душанбе-Москва </div>
+<div id="div_07_02_UTA6804" >07.02 UTA6760	Худжанд-Сургут </div>
+<div id="div_14_02_UTA6804" >14.02 UTA6804	Душанбе-Москва </div>
+<div id="div_07_02_UTA6804" >17.02 UTA6804	Душанбе-Москва </div>
+<div id="div_07_02_UTA6804" >17.02 UTA6760	Худжанд-Сургут </div>
+<div id="div_07_02_UTA6804" >25.02 UTA6804	Душанбе-Москва </div>
+<div id="div_07_02_UTA6804" >28.02 UTA6804	Душанбе-Москва </div>
+<div id="div_07_02_UTA6804" >28.02 UTA6760 	Худжанд-Сургут </div>
+";
+
+
+div_flights_2021_02.innerHTML = ss_flights_2021_02;
+divs_b_34998271[0].appendChild(div_flights_2021_02);
+
 }
 
 
