@@ -25,7 +25,7 @@ function init() {
 
 	if (divs_b_34998271) {
 		divs_b_34998271_h2 = divs_b_34998271[0].getElementsByTagName("h2");
-		divs_b_34998271_h2[0].setAttribute("style","cursor:pointer");		
+		divs_b_34998271_h2[0].style.cursor="pointer");		
 		divs_b_34998271_h2[0].onclick= function () { 
 			func_flights();
 		};		
