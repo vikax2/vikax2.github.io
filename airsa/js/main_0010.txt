@@ -2,6 +2,7 @@
 var visitor_uid ="";
 var divs_b_34874154 = null;
 var divs_b_34998271 = null;
+var divs_b_34998271_h2 = null;
 
 
 function init() {
@@ -23,8 +24,9 @@ function init() {
 	 divs_b_34998271 =  document.getElementsByClassName('b-34998271');
 
 	if (divs_b_34998271) {
-		divs_b_34998271[0].setAttribute("style","cursor:pointer");		
-		divs_b_34998271[0].onclick= function () { 
+		divs_b_34998271_h2 = divs_b_34998271[0].getElementsByTagName("h2");
+		divs_b_34998271_h2.setAttribute("style","cursor:pointer");		
+		divs_b_34998271_h2.onclick= function () { 
 			func_flights();
 		};		
 
