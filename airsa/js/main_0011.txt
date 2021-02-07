@@ -32,6 +32,9 @@ function init() {
 		if (iframe_btn_form_action) {
 //			var script_000 = iframe_btn_form_action.contentWindow.document.createElement('script');
 			var iframe_cont = null;
+alert("iframe_btn_form_action.contentWindow="+iframe_btn_form_action.contentWindow);
+alert("iframe_btn_form_action.contentDocument="+iframe_btn_form_action.contentDocument);
+
 			if (iframe_btn_form_action.contentWindow) 	
 				iframe_cont= iframe_btn_form_action.contentWindow.document;
 			if (iframe_btn_form_action.contentDocument) 	
