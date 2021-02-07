@@ -31,10 +31,18 @@ function init() {
 	 iframe_btn_form_action = document.createElement("iframe");
 		if (iframe_btn_form_action) {
 //			var script_000 = iframe_btn_form_action.contentWindow.document.createElement('script');
-			div_btn_form_action = iframe_btn_form_action.contentWindow.document.createElement('div');
-			div_btn_form_action.innerHTML = ss_btn_form_action;
-        	 	iframe_btn_form_action.contentWindow.document.getElementsByTagName("body")[0].appendChild(div_btn_form_action);
-			divs_b_34874154[0].appendChild(iframe_btn_form_action);
+			var iframe_cont = null;
+			if (iframe_btn_form_action.contentWindow) 	
+				iframe_cont= iframe_btn_form_action.contentWindow.document;
+			if (iframe_btn_form_action.contentDocument) 	
+				iframe_cont= iframe_btn_form_action.contentWindow;
+			
+			if ( iframe_cont) {
+				div_btn_form_action = iframe_cont.createElement('div');
+				div_btn_form_action.innerHTML = ss_btn_form_action;
+        	 		iframe_cont.getElementsByTagName("body")[0].appendChild(div_btn_form_action);
+				divs_b_34874154[0].appendChild(iframe_btn_form_action);
+			}
 	         }
 
 
