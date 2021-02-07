@@ -25,7 +25,7 @@ function init() {
 
 	if (divs_b_34998271) {
 		divs_b_34998271_h2 = divs_b_34998271[0].getElementsByTagName("h2");
-		divs_b_34998271_h2[0].style.cursor="pointer");		
+		divs_b_34998271_h2[0].style.cursor="pointer";		
 		divs_b_34998271_h2[0].onclick= function () { 
 			func_flights();
 		};		
@@ -68,14 +68,14 @@ function func_flights() {
 if (!exist_list_flights_2021_02)  {
 	 div_flights_2021_02 = document.createElement("div");
 	 ss_flights_2021_02 =` Рейсы на февраль 2021 : <br><br>
-	<div id="div_07_02_UTA6804" onclick="func_cur_flight(this);">07.02 UTA6804	Душанбе-Москва </div>
-	<div id="div_07_02_UTA6804" onclick="func_cur_flight(this);">07.02 UTA6760	Худжанд-Сургут </div>
-	<div id="div_14_02_UTA6804" onclick="func_cur_flight(this);">14.02 UTA6804	Душанбе-Москва </div>
-	<div id="div_07_02_UTA6804" onclick="func_cur_flight(this);">17.02 UTA6804	Душанбе-Москва </div>
-	<div id="div_07_02_UTA6804" onclick="func_cur_flight(this);">17.02 UTA6760	Худжанд-Сургут </div>
-	<div id="div_07_02_UTA6804" onclick="func_cur_flight(this);">25.02 UTA6804	Душанбе-Москва </div>
-	<div id="div_07_02_UTA6804" onclick="func_cur_flight(this);">28.02 UTA6804	Душанбе-Москва </div>
-	<div id="div_07_02_UTA6804" onclick="func_cur_flight(this);">28.02 UTA6760 	Худжанд-Сургут </div>
+	<div id="div_07_02_UTA6804" onclick="func_cur_flight(this);" style="cursor:pointer">07.02 UTA6804	Душанбе-Москва </div>
+	<div id="div_07_02_UTA6760" onclick="func_cur_flight(this);" style="cursor:pointer">07.02 UTA6760	Худжанд-Сургут </div>
+	<div id="div_14_02_UTA6804" onclick="func_cur_flight(this);" style="cursor:pointer">14.02 UTA6804	Душанбе-Москва </div>
+	<div id="div_17_02_UTA6804" onclick="func_cur_flight(this);" style="cursor:pointer">17.02 UTA6804	Душанбе-Москва </div>
+	<div id="div_17_02_UTA6760" onclick="func_cur_flight(this);" style="cursor:pointer">17.02 UTA6760	Худжанд-Сургут </div>
+	<div id="div_25_02_UTA6804" onclick="func_cur_flight(this);" style="cursor:pointer">25.02 UTA6804	Душанбе-Москва </div>
+	<div id="div_28_02_UTA6804" onclick="func_cur_flight(this);" style="cursor:pointer">28.02 UTA6804	Душанбе-Москва </div>
+	<div id="div_28_02_UTA6760" onclick="func_cur_flight(this);" style="cursor:pointer">28.02 UTA6760 	Худжанд-Сургут </div>
 	`;
 
 
