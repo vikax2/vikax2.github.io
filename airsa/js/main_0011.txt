@@ -13,15 +13,6 @@ function init() {
 	var ss_btn_form_action =`
 	<button style="box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 0px; display: block; font-family: Tahoma, Arial, sans-serif; padding: 0px 33px; border-radius: 3px; height: 52px; border: medium none; outline: currentcolor none medium; cursor: pointer; text-transform: none; font-weight: 400; margin: 0px 0px 15px; font-size: 15px; color: rgb(255, 255, 255); background-color: rgb(50, 45, 204);" id="amoforms_action_btn">Заполнить форму</button>
 	`;
-	 iframe_btn_form_action = document.createElement("iframe");
-	if (iframe_btn_form_action) {
-		 //div_btn_form.innerHTML = ss_btn_form_action;
-
-//	var script_000 = iframe.contentWindow.document.createElement('script');
-		 div_btn_form_action = iframe.contentWindow.document.createElement('div');
-		 div_btn_form.innerHTML = ss_btn_form_action;
-         	iframe_btn_form_action.contentWindow.document.getElementsByTagName("body")[0].appendChild(div_btn_form_action);
-         }
 	
 	
 
@@ -44,7 +35,7 @@ function init() {
 //			var script_000 = iframe.contentWindow.document.createElement('script');
 			div_btn_form_action = iframe.contentWindow.document.createElement('div');
 			div_btn_form.innerHTML = ss_btn_form_action;
-        	 	iframe_btn_form_action.contentWindow.document.getElementsByTagName("body")appendChild(div_btn_form_action);
+        	 	iframe_btn_form_action.contentWindow.document.getElementsByTagName("body")[0].appendChild(div_btn_form_action);
 			divs_b_34874154[0].appendChild(iframe_btn_form_action);
 	         }
 
