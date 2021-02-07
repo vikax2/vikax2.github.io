@@ -29,8 +29,11 @@ function init() {
 
 
 
+alert(" AMOPIXEL_IDENTIFIER="+AMOPIXEL_IDENTIFIER);
+alert(" AMOPIXEL_IDENTIFIER.getVisitorUid()="+AMOPIXEL_IDENTIFIER.getVisitorUid());
 
-visitor_uid = AMOPIXEL_IDENTIFIER.getVisitorUid ( ) ;
+
+visitor_uid = AMOPIXEL_IDENTIFIER.getVisitorUid();
 
 
 
