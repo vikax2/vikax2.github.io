@@ -96,19 +96,19 @@ function handleMotion(event) {
 
 
 //alert("001 event="+event);
-  updateFieldIfNotNull('Accelerometer_gx', event.accelerationIncludingGravity.x);
-  updateFieldIfNotNull('Accelerometer_gy', event.accelerationIncludingGravity.y);
-  updateFieldIfNotNull('Accelerometer_gz', event.accelerationIncludingGravity.z);
+//  updateFieldIfNotNull('Accelerometer_gx', event.accelerationIncludingGravity.x);
+//  updateFieldIfNotNull('Accelerometer_gy', event.accelerationIncludingGravity.y);
+//  updateFieldIfNotNull('Accelerometer_gz', event.accelerationIncludingGravity.z);
 
   updateFieldIfNotNull('Accelerometer_x', event.acceleration.x);
   updateFieldIfNotNull('Accelerometer_y', event.acceleration.y);
   updateFieldIfNotNull('Accelerometer_z', event.acceleration.z);
 
-  updateFieldIfNotNull('Accelerometer_i', event.interval, 2);
+//  updateFieldIfNotNull('Accelerometer_i', event.interval, 2);
 
-  updateFieldIfNotNull('Gyroscope_z', event.rotationRate.alpha);
-  updateFieldIfNotNull('Gyroscope_x', event.rotationRate.beta);
-  updateFieldIfNotNull('Gyroscope_y', event.rotationRate.gamma);
+//  updateFieldIfNotNull('Gyroscope_z', event.rotationRate.alpha);
+//  updateFieldIfNotNull('Gyroscope_x', event.rotationRate.beta);
+//  updateFieldIfNotNull('Gyroscope_y', event.rotationRate.gamma);
   incrementEventCount();
 }
 function geo_success(position) {
@@ -119,18 +119,18 @@ function geo_success(position) {
 let is_running = false;
 let demo_button = document.getElementById("start_demo");
 demo_button.onclick = function(e) {
-alert("001");
+//alert("001");
 
   e.preventDefault();
-alert("002-0 DeviceMotionEvent=" + window.DeviceMotionEvent);
+//alert("002-0 DeviceMotionEvent=" + window.DeviceMotionEvent);
 
 
-  if (window.DeviceMotionEvent) {
-alert("002-1 typeof DeviceMotionEvent.requestPermission="+(typeof window.DeviceMotionEvent.requestPermission));
-}
+//  if (window.DeviceMotionEvent) {
+//alert("002-1 typeof DeviceMotionEvent.requestPermission="+(typeof window.DeviceMotionEvent.requestPermission));
+//}
   
 
-alert("002-2 navigator.geolocation=" + navigator.geolocation);
+//alert("002-2 navigator.geolocation=" + navigator.geolocation);
 
 
 if (navigator.geolocation) {
@@ -144,18 +144,18 @@ if (navigator.geolocation) {
     window.DeviceMotionEvent &&
    ( typeof window.DeviceMotionEvent.requestPermission === "function")
   ) {
-alert("003");
+//alert("003");
 
     window.DeviceMotionEvent.requestPermission();
-alert("004");
+//alert("004");
 
   }
   
 
-alert("005");
+//alert("005");
 
   if (is_running){
-alert("006");
+//alert("006");
 
     window.removeEventListener("devicemotion", handleMotion,true);
     window.removeEventListener("deviceorientation", handleOrientation,true);
@@ -164,7 +164,7 @@ alert("006");
     demo_button.classList.remove('btn-danger');
     is_running = false;
   }else{
-alert("007");
+//alert("007");
 
     window.addEventListener("devicemotion", handleMotion,true);
     window.addEventListener("deviceorientation", handleOrientation,true);
