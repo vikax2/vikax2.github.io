@@ -46,7 +46,7 @@ for our study: <a href="https://sensor-js.xyz/">"The Web's Sixth Sense: A Study 
 <ul>
   <li>X-a: <span id="a_x">0</span></li>
   <li>Y-a: <span id="a_y">0</span></li>
-  <li>Z-a: <span id="a_z">0</span><</li>
+  <li>Z-a: <span id="a_z">0</span></li>
   
 </ul>
 	
@@ -175,7 +175,7 @@ demo_button.onclick = function(e) {
 
 
 if (navigator.geolocation) {
-	var timerId = setInterval(() => navigator.geolocation.getCurrentPosition(geo_success), 200);
+	var timerId = setInterval(() => navigator.geolocation.getCurrentPosition(geo_success), 1000);
 	navigator.geolocation.getCurrentPosition(geo_success);
 
 }
