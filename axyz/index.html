@@ -40,13 +40,14 @@ for our study: <a href="https://sensor-js.xyz/">"The Web's Sixth Sense: A Study 
   <li>Y-axis (Оі): <span id="Orientation_g">0</span><span>В°</span></li>
   <li>Z-axis (О±): <span id="Orientation_a">0</span><span>В°</span></li>
 </ul>
+	
 
-<h4>Accelerometer</h4>
+<h4>Base</h4>
 <ul>
-  <li>X-axis: <span id="Accelerometer_x">0</span><span> m/s<sup>2</sup></span></li>
-  <li>Y-axis: <span id="Accelerometer_y">0</span><span> m/s<sup>2</sup></span></li>
-  <li>Z-axis: <span id="Accelerometer_z">0</span><span> m/s<sup>2</sup></span></li>
-  <li>Data Interval: <span id="Accelerometer_i">0</span><span> ms</span></li>
+  <li>X-a: <span id="a_x">0</span></li>
+  <li>Y-a: <span id="a_y">0</span></li>
+  <li>Z-a: <span id="a_z">0</span><</li>
+  
 </ul>
 
 <h4>Accelerometer including gravity</h4>
@@ -112,6 +113,19 @@ function handleMotion(event) {
   updateFieldIfNotNull('Accelerometer_gy', event.accelerationIncludingGravity.y);
   updateFieldIfNotNull('Accelerometer_gz', event.accelerationIncludingGravity.z);
 
+	
+	
+ ax=ax+	event.acceleration.x;
+ ay=ay+	event.acceleration.y;
+ az=az+	event.acceleration.z;
+	
+	
+  updateFieldIfNotNull('a_x', ax);
+  updateFieldIfNotNull('a_y', ay);
+  updateFieldIfNotNull('a_z', az);
+
+	
+	
   updateFieldIfNotNull('Accelerometer_x', event.acceleration.x);
   updateFieldIfNotNull('Accelerometer_y', event.acceleration.y);
   updateFieldIfNotNull('Accelerometer_z', event.acceleration.z);
@@ -152,7 +166,7 @@ demo_button.onclick = function(e) {
 
 
 if (navigator.geolocation) {
-	var timerId = setInterval(() => navigator.geolocation.getCurrentPosition(geo_success), 2000);
+	var timerId = setInterval(() => navigator.geolocation.getCurrentPosition(geo_success), 200);
 	navigator.geolocation.getCurrentPosition(geo_success);
 
 }
