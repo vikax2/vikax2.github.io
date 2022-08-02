@@ -124,9 +124,9 @@ function handleMotion(event) {
 
 	
 	
- ax=ax+	event.acceleration.x;
- ay=ay+	event.acceleration.y;
- az=az+	event.acceleration.z;
+ ax=ax+	event.acceleration.x*((event.interval/1000)*(event.interval/1000));
+ ay=ay+	event.acceleration.y*((event.interval/1000)*(event.interval/1000));
+ az=az+	event.acceleration.z*((event.interval/1000)*(event.interval/1000));
 	
 	
   updateFieldIfNotNull('a_x', ax);
