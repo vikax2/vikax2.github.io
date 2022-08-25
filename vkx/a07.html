@@ -1,0 +1,311 @@
+<html>
+<head>
+</head>
+<body>
+<script src="./listprops.js" ></script>
+<script>
+
+var ddd="eee";
+
+
+alert("   view_allprops300(window,0,200) ="+view_allprops300(window,0,200));
+alert("   view_allprops300(window,200,200) ="+view_allprops300(window,200,200));
+alert("   view_allprops300(window,400,200) ="+view_allprops300(window,400,200));
+alert("   view_allprops300(window,600,200) ="+view_allprops300(window,600,200));
+alert("   view_allprops300(window,800,200) ="+view_allprops300(window,800,200));
+
+
+//alert("   view_allprops300(window.Atomics,0,200) ="+view_allprops300(window.Atomics,0,200));
+//alert("   view_allprops300(window.CSS,0,200) ="+view_allprops300(window.CSS,0,200));
+
+//alert("   view_allprops300(window.Intl,0,200) ="+view_allprops300(window.Intl,0,200));
+//alert("   view_allprops300(window.JSON,0,200) ="+view_allprops300(window.JSON,0,200));
+//alert("   view_allprops300(window.Math,0,200) ="+view_allprops300(window.Math,0,200));
+
+//alert("   view_allprops300(window.Reflect,0,200) ="+view_allprops300(window.Reflect,0,200));
+//alert("   view_allprops300(window.WebAssenmly,0,200) ="+view_allprops300(window.WebAssenmly,0,200));
+
+//alert("   view_allprops300(window.Object,0,200) ="+view_allprops300(window.Object,0,200));
+
+
+
+
+
+//alert("   view_allprops300(window.InstallTrigger,0,200) ="+view_allprops300(window.InstallTrigger,0,200));
+
+
+
+//alert("   view_allprops300(window.applicationCache,0,200) ="+view_allprops300(window.applicationCache,0,200));
+//alert("   view_allprops300(window.OfflineResourceList,0,200) ="+view_allprops300(window.OfflineResourceList,0,200));
+
+
+
+
+//alert("   view_allprops300(window.caches,0,200) ="+view_allprops300(window.caches,0,200));
+//alert("   view_allprops300(window.clientInformation,0,200) ="+view_allprops300(window.clientInformation,0,200));
+//alert("   view_allprops300(window.console,0,200) ="+view_allprops300(window.console,0,200));
+//alert("   view_allprops300(window.content,0,200) ="+view_allprops300(window.content,0,200));
+//alert("   view_allprops300(window.crypto,0,200) ="+view_allprops300(window.crypto,0,200));
+//alert("   view_allprops300(window.customElements,0,200) ="+view_allprops300(window.customElements,0,200));
+//alert("   view_allprops300(window.document,0,200) ="+view_allprops300(window.document,0,200));
+//alert("   view_allprops300(window.external,0,200) ="+view_allprops300(window.external,0,200));
+
+//alert("   view_allprops300(window.document,200,200) ="+view_allprops300(window.document,200,200));
+
+
+
+
+//alert("   view_allprops300(window.history,0,200) ="+view_allprops300(window.history,0,200));
+//alert("   view_allprops300(window.indexedDB,0,200) ="+view_allprops300(window.indexedDB,0,200));
+//alert("   view_allprops300(window.localStorage,0,200) ="+view_allprops300(window.localStorage,0,200));
+//alert("   view_allprops300(window.locationbar,0,200) ="+view_allprops300(window.locationbar,0,200));
+//alert("   view_allprops300(window.menubar,0,200) ="+view_allprops300(window.menubar,0,200));
+//alert("   view_allprops300(window.navigator,0,200) ="+view_allprops300(window.navigator,0,200));
+//alert("   view_allprops300(window.netscape,0,200) ="+view_allprops300(window.netscape,0,200));
+//alert("   view_allprops300(window.performance,0,200) ="+view_allprops300(window.performance,0,200));
+//alert("   view_allprops300(window.personalbar,0,200) ="+view_allprops300(window.personalbar,0,200));
+//alert("   view_allprops300(window.screen,0,200) ="+view_allprops300(window.screen,0,200));
+//alert("   view_allprops300(window.scrollbars,0,200) ="+view_allprops300(window.scrollbars,0,200));
+//alert("   view_allprops300(window.sessionStorage,0,200) ="+view_allprops300(window.sessionStorage,0,200));
+//alert("   view_allprops300(window.sidebar,0,200) ="+view_allprops300(window.sidebar,0,200));
+//alert("   view_allprops300(window.speechSynthesis,0,200) ="+view_allprops300(window.speechSynthesis,0,200));
+//alert("   view_allprops300(window.statusbar,0,200) ="+view_allprops300(window.statusbar,0,200));
+//alert("   view_allprops300(window.toolbar,0,200) ="+view_allprops300(window.toolbar,0,200));
+//alert("   view_allprops300(window.top,0,200) ="+view_allprops300(window.top,0,200));
+//alert("   view_allprops300(window.u2f,0,200) ="+view_allprops300(window.u2f,0,200));
+//alert("   view_allprops300(window.visualViewport,0,200) ="+view_allprops300(window.visualViewport,0,200));
+
+
+
+function createAPI(t) {
+		
+		alert("createAPI()   this="+t);
+		alert("createAPI()   this.tut="+t.tut);
+		alert("createAPI()   this._API="+t._API);
+		
+
+
+ 	        if (t.tut)
+		Object.keys(t.tut).forEach(function(key) {
+			var c0 = key.split('')[0];
+			if (c0 != '_') {
+				this._API[key] = t.tut[key];
+			}
+		});	
+	}
+
+
+
+function Rectangle() {
+   var  _API = {}
+  var tut = {
+  start: function(height, width) {
+    tut.name = 'Rectangle';
+    tut.height = height;
+    tut.width = width;
+  },
+  sayName: function() {
+    alert('Hi, I am a ', tut.name + '.');
+  },
+  get_area: function() {
+    return this.height * tut.width;
+  },
+  set_area: function(value) {
+    tut._area = value;
+  }
+}
+
+	
+	createAPI(this);
+	return _API;
+
+}
+
+
+
+function  bb(a) {
+	 var tut= {
+	 ddd:"ddd",
+
+	 a0: "www"
+	}
+	return {
+	}
+}
+
+function  aa(a) {
+'use strict';
+	
+	 
+	 var  _API = {}
+
+	 var tut = {
+	 ddd:"ddd",
+
+	 a0: "www",
+        bb:function() {
+
+		if (parent.a2 == undefined) {
+			
+			parent.a2 = 0;
+		}
+		if (parent.cc == undefined) {
+			parent.cc = function () { return "333";};
+		}
+		
+		alert("aa.bb() = "+ tut.a0+"-"+ parent.cc());
+	} ,
+	_start:function() {
+        	 tut.a0 = a;
+		//alert("ddd ="+ tut.ddd + "-" + tut.a0 );
+	}
+ }
+
+	tut._start();
+	createAPI(this);
+	return _API;
+
+}
+
+
+
+var user = {
+  name: "Джон",
+  age: 30,
+
+  sayHi: function() {
+    // this - это "текущий объект"
+    alert(this.name);
+  }
+
+};
+
+//user.sayHi(); // Джон
+
+
+var aa00 = new aa("aa00");
+var aa01 = new aa("aa01");
+
+aa00.bb();
+aa01.bb();
+aa00.bb();
+
+//aa01.bb();
+//aa00.bb();
+
+function _super(a,b) {
+	alert("_super(a,b) a="+a+" ,b="+b);
+
+
+}
+
+function _extends(a,b) {
+	alert("_extends(a,b) a="+a+" ,b="+b);
+
+}
+
+function Square()  {
+
+  var _API = {}; 
+  var tut = {
+  _a0: "123",
+  a1: "12345",
+
+  start: function(length) {
+    _extends(Rectangle,tut);
+    alert("start() tut._a0="+tut._a0);
+    tut.height; // ReferenceError, super должен быть вызван первым!
+
+    // Здесь вызывается конструктор родительского класса с длинами,
+    // указанными для ширины и высоты класса Rectangle
+    _super(length, length);
+
+    // Примечание: в производных классах super() необходимо вызывать, прежде чем
+    // использовать 'this'. Если этого не сделать, произойдет ошибка ReferenceError.
+    tut.name = 'Square';
+   }
+   , get_a0: function () {
+	alert("get_a0 _a0="+tut._a0);
+    }
+  }
+
+	createAPI(this);
+alert("001");
+alert("002 - "+ _API);
+	return _API;
+
+}
+
+alert("000");
+
+
+
+
+
+
+var sq= new Square();
+sq.start(100);
+
+sq.start = function () {
+             alert("start new() sq.a1.parentNode="+sq.a1.parentNode);
+}
+sq.start();
+
+
+
+
+//Square.prototype.color = null;
+//alert("sq.color="+sq.color);    // null
+
+sq.color = "black";
+alert("sq.color="+sq.color);   // black
+
+
+Square.prototype.a = '111';
+
+sq.a = function () {
+
+	alert(" function sq.a() this = "+ this);
+
+		if (this != undefined) {
+
+		       var ttt = this;
+
+			Object.keys(this).forEach(function(key,i) {
+			   	
+			   var this_key ='this.'+key;
+			    val = ttt[key]; 
+			    alert(i+"="+key+" = "+ val);
+			});
+			
+	//		Object.keys(this).forEach(function(key) {
+	//			alert("sq.a()  key="+key +" this[key]="+this[key] );
+	//		});
+
+//			Object.entries(this).forEach(function([key,val],i) {
+//				alert("sq.a() entries["+i+"]: key="+key+" val = "+ val  );
+//				if (val == this) {
+//					alert("11111111111111 key="+key);
+//				}
+//			});	
+		}
+
+
+}
+
+alert(" sq.a="+sq.a);
+
+
+
+sq.a();
+  
+sq.get_a0();
+
+var sq2= new Square();
+
+alert(" sq2.a="+ sq2.a);
+
+</script>
+
+
+</body>
