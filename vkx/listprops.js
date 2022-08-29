@@ -111,7 +111,7 @@ var ts125="";
 for(let i=start,j=0,k=0;(i<tff.length)  && (i<(start+len)) ; i++,j++) {
 	//alert("444  =----- i="+i+"  "+tff[i]);
 //	if ((j%1) == 0)
-	 { k++;ts125 +="\n<br>  --- "; }
+	 	 { k++;ts125 +="\n"+0x3c+"br"+0x3e +' === '; }
 	ts125 +="   i="+i+"  "+tff[i];
 }
 
