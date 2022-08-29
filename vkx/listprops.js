@@ -105,7 +105,7 @@ if (obj == undefined ) return "undefined";
 //console.log("view_allprops(obj)  obj="+obj.valueOf());
 let tff = listAllProperties(obj).sort();
 //alert("222");
-alert("333 tff.length="+tff.length+ " start="+start+" start+len="+(start+len) );
+//alert("333 tff.length="+tff.length+ " start="+start+" start+len="+(start+len) );
 var ts125="";
 
 for(let i=start,j=0,k=0;(i<tff.length)  && (i<(start+len)) ; i++,j++) {
