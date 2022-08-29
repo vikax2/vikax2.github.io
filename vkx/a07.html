@@ -2,17 +2,24 @@
 <head>
 </head>
 <body>
+<div id="cont" ></div>
 <script src="./listprops.js" ></script>
 <script>
 
 var ddd="eee";
+var cont =document.getElementById("cont");
+	cont.innerHTML += "view_allprops300(window) =\n";
+for(var n=0;n< 1100 ; n=n+20) {
+	cont.innerHTML += view_allprops300(window,n,20);
+	//alert("   view_allprops300(window,"+n+",20) ="+view_allprops300(window,n,20));
+}
 
 
-alert("   view_allprops300(window,0,200) ="+view_allprops300(window,0,200));
-alert("   view_allprops300(window,200,200) ="+view_allprops300(window,200,200));
-alert("   view_allprops300(window,400,200) ="+view_allprops300(window,400,200));
-alert("   view_allprops300(window,600,200) ="+view_allprops300(window,600,200));
-alert("   view_allprops300(window,800,200) ="+view_allprops300(window,800,200));
+//alert("   view_allprops300(window,0,200) ="+view_allprops300(window,0,200));
+//alert("   view_allprops300(window,200,200) ="+view_allprops300(window,200,200));
+//alert("   view_allprops300(window,400,200) ="+view_allprops300(window,400,200));
+//alert("   view_allprops300(window,600,200) ="+view_allprops300(window,600,200));
+//alert("   view_allprops300(window,800,200) ="+view_allprops300(window,800,200));
 
 
 //alert("   view_allprops300(window.Atomics,0,200) ="+view_allprops300(window.Atomics,0,200));
