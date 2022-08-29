@@ -108,9 +108,13 @@ let tff = listAllProperties(obj).sort();
 alert("333 tff.length="+tff.length+ " start="+start+" start+len="+(start+len) );
 var ts125="";
 
-for(let i=start;(i<tff.length)  && (i<(start+len)) ; i++) {
-	ts125 +="\n=----- i="+i+"  "+tff[i];
+for(let i=start,j=0,k=0;(i<tff.length)  && (i<(start+len)) ; i++,j++) {
+	//alert("444  =----- i="+i+"  "+tff[i]);
+//	if ((j%1) == 0)
+	 { k++;ts125 +="\n<br>  --- "; }
+	ts125 +="   i="+i+"  "+tff[i];
 }
+
 
 return ts125;
 };
