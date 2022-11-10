@@ -3,8 +3,8 @@
   
 <button id = "find-me">Show my location</button><br/>
 <p id = "status"></p>
-<a id = "map-link" target="_blank"></a>
-  <iframe id="if_lgv" src="" ></iframe> 
+<a id = "map-link" target="_blank" style="display:none;"></a>
+  
   
 <script>
 function geoFindMe() {
@@ -17,7 +17,7 @@ function geoFindMe() {
   mapLink.textContent = '';
 
   function success(position) {
-    alert("success(position)");
+    
     const latitude  = position.coords.latitude;
     const longitude = position.coords.longitude;
 
