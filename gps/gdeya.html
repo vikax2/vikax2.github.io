@@ -4,13 +4,15 @@
 <button id = "find-me">Show my location</button><br/>
 <p id = "status"></p>
 <a id = "map-link" target="_blank"></a>
+  <iframe id="if_lgv" src="" ></iframe> 
   
 <script>
 function geoFindMe() {
 
   const status = document.querySelector('#status');
   const mapLink = document.querySelector('#map-link');
-
+  
+  
   mapLink.href = '';
   mapLink.textContent = '';
 
@@ -20,20 +22,9 @@ function geoFindMe() {
     const longitude = position.coords.longitude;
 
     status.textContent = '';
-    //mapLink.href = `https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`;
-    //mapLink.textContent = `Latitude: ${latitude} °, Longitude: ${longitude} °`;
-    
-    alert("parent="+parent);
-    if (parent) {
-alert("parent.map2="+parent.map2);
-      
-      if (parent.map2) {
-        let pos_gdeya = [latitude,longitude];
-        parent.map2.setView(pos_gdeya,15);
-
-      alert("parent.map2.setView(pos_gdeya,15)");
-      }
-    }  
+    mapLink.href = `http://bmap.1-ws.com/lgv/index.html?map=18&${latitude}&${longitude}`;
+    mapLink.textContent = `Latitude: ${latitude} °, Longitude: ${longitude} °`;
+    mapLink.click();  
   }
 
  function error() {
@@ -41,11 +32,11 @@ alert("parent.map2="+parent.map2);
   }
 
   if (!navigator.geolocation) {
-    alert("003");  
+     
     status.textContent = 'Geolocation is not supported by your browser';
   
   } else {
-  alert("004");
+ 
     status.textContent = 'Locating…';
     navigator.geolocation.getCurrentPosition(success, error);
   }
@@ -53,9 +44,7 @@ alert("parent.map2="+parent.map2);
 }
 
 document.querySelector('#find-me').addEventListener('click', geoFindMe);
-alert("001");
   geoFindMe();
-alert("002");
 </script>
 </body>
 </html>
